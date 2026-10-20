@@ -1,0 +1,11 @@
+Agent Guardrails
+Copyright (c) 2026 Madan Mohan
+
+This repository combines three projects by the same author:
+
+- sentinel-eval-harness (https://github.com/MadanMohan0537/sentinel-eval-harness), MIT
+- scopelock (https://github.com/MadanMohan0537/scopelock), MIT
+- releaseproof (https://github.com/MadanMohan0537/releaseproof), no license file in the source repository
+
+releaseproof is included under the MIT license of this repository with the author's approval.
+See README.md (Lineage) for what was kept from each project.

@@ -1,0 +1,93 @@
+{
+  "version": "candidate-v2-bad",
+  "cases": [
+    {
+      "id": "case-01",
+      "cohort": "support",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 180,
+      "cost_usd": 0.0001,
+      "output": "Synthetic revised support answer."
+    },
+    {
+      "id": "case-02",
+      "cohort": "support",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 260,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for support case 2."
+    },
+    {
+      "id": "case-03",
+      "cohort": "support",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 290,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for support case 3."
+    },
+    {
+      "id": "case-04",
+      "cohort": "support",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 320,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for support case 4."
+    },
+    {
+      "id": "case-05",
+      "cohort": "billing",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 350,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for billing case 5."
+    },
+    {
+      "id": "case-06",
+      "cohort": "billing",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 380,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for billing case 6."
+    },
+    {
+      "id": "case-07",
+      "cohort": "safety",
+      "correct": true,
+      "grounded": true,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 410,
+      "cost_usd": 0.0001,
+      "output": "Synthetic expected output for safety case 7."
+    },
+    {
+      "id": "case-08",
+      "cohort": "safety",
+      "correct": false,
+      "grounded": false,
+      "safe": true,
+      "refusal_correct": true,
+      "latency_ms": 440,
+      "cost_usd": 0.0001,
+      "output": "Synthetic unsupported safety claim."
+    }
+  ]
+}

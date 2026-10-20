@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agent Guardrails</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07111f;--card:#101d30;--ink:#e8f0ff;--muted:#91a4bf;--accent:#55e6a5}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#13294a,var(--bg) 42%);color:var(--ink);font:15px system-ui,sans-serif;min-height:100vh}
+    main{max-width:1080px;margin:auto;padding:64px 24px}h1{font-size:clamp(2rem,6vw,4.8rem);letter-spacing:-.06em;margin:0}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-weight:700}.sub{color:var(--muted);max-width:680px;font-size:1.15rem;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:40px 0}.card{background:color-mix(in srgb,var(--card) 88%,transparent);border:1px solid #203452;border-radius:18px;padding:22px;box-shadow:0 18px 60px #0005}.metric{font-size:2rem;font-weight:750;margin-top:9px}.run{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:14px;padding:16px;border-bottom:1px solid #203452}.pass{color:var(--accent)}code{color:#b8c9e3}@media(max-width:680px){.run{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body><main><div class="eyebrow">Evaluate</div><h1>Agent Guardrails</h1><p class="sub">Evaluation evidence for release decisions: deterministic checks, robustness probes, confidence intervals, latency budgets, and regression gates.</p><section class="grid" id="metrics"></section><section class="card"><h2>Recent experiments</h2><div id="runs">Loading evaluation history…</div></section></main>
+<script>
+const pct=v=>`${(v*100).toFixed(1)}%`;
+fetch('/api/runs').then(r=>r.json()).then(runs=>{const latest=runs[0];document.querySelector('#metrics').innerHTML=latest?[['Pass rate',pct(latest.summary.pass_rate)],['Cases',latest.summary.cases],['Latency',`${latest.summary.mean_latency_ms.toFixed(1)} ms`],['Dataset',latest.dataset_hash]].map(([k,v])=>`<div class="card"><div class="eyebrow">${k}</div><div class="metric">${v}</div></div>`).join(''):'<div class="card">Run the demo suite to populate metrics.</div>';document.querySelector('#runs').innerHTML=runs.length?runs.map(x=>`<div class="run"><code>${x.id.slice(0,8)}</code><span>${x.model}</span><span class="pass">${pct(x.summary.pass_rate)}</span><span>${new Date(x.created_at).toLocaleString()}</span></div>`).join(''):'No runs yet.'}).catch(()=>document.querySelector('#runs').textContent='Start the API and run an evaluation to see results.');
+</script></body></html>
+
