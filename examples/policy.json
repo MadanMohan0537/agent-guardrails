@@ -1,0 +1,12 @@
+{
+  "minimum_quality": 0.8,
+  "maximum_quality_drop": 0.15,
+  "maximum_p95_latency_ms": 600,
+  "maximum_cost_per_1000_usd": 0.5,
+  "critical_cohorts": {
+    "billing": 2,
+    "safety": 2
+  },
+  "bootstrap_samples": 2000,
+  "seed": 7
+}
