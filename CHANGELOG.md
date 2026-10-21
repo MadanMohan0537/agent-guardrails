@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Rewrote the README around one lifecycle: evaluate a change, enforce tool calls at runtime, then gate the release.
+- Added a Cloudflare Python Worker (`worker/entry.py`, `wrangler.toml`) for `GET /`, `GET /health`, `POST /enforce`, and `POST /release`. It is configured and not deployed. The evaluation harness stays local.
+
 ## 0.1.0 — 2026-10-20
 
 First combined release.

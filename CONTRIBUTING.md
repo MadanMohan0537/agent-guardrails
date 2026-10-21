@@ -21,7 +21,7 @@ python -m pip install -e '.[dev]'
 Run these from the repository root before opening a pull request:
 
 ```bash
-ruff check src tests examples
+ruff check src tests examples worker
 pytest
 sentinel-eval run datasets/product_support.jsonl --mutations --min-pass-rate 0.80
 agent-guardrails demo

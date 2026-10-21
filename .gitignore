@@ -12,4 +12,6 @@ reports/
 *.egg-info/
 dist/
 build/
+.wrangler/
+node_modules/
 .env

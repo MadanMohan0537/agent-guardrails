@@ -1,0 +1,15 @@
+# Cloudflare Workers target. This file does not publish anything.
+# Deploy the current Worker with `npx wrangler deploy` (no version pin).
+name = "agent-guardrails"
+main = "worker/entry.py"
+compatibility_date = "2026-10-21"
+compatibility_flags = ["python_workers", "disable_python_external_sdk"]
+# The default module root is only the directory of `main`. Point it at the
+# repository so src/agent_guardrails is uploaded with the Worker.
+base_dir = "."
+
+# Replace the default text rule, which would also upload local HTML reports.
+[[rules]]
+type = "Text"
+globs = ["src/agent_guardrails/evaluate/static/index.html"]
+fallthrough = false
